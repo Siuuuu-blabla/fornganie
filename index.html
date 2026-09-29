@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#fff5f8">
+    <title>Tiệm Trà Sữa Nhỏ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="top-bar">
+            <div class="brand">🧋 <span>Tiệm Trà Sữa</span> <b>🌷</b></div>
+            <div class="stats">
+                <span>📅 <strong id="day">1</strong></span>
+                <span>💰 <strong id="money">100.000</strong>đ</span>
+                <span>🕐 <strong id="time">05:00</strong></span>
+            </div>
+        </header>
+
+        <main class="game-area">
+            <section class="shop-card">
+                <div class="shop-sign">☁️ <span>Tiệm nhỏ xinh</span> 🌸</div>
+                <div class="shop-floor">
+                    <div class="cloud cloud-a">☁️</div>
+                    <div class="cloud cloud-b">☁️</div>
+                    <div class="door">🚪</div>
+                    <div id="customer" class="customer hidden">🙂</div>
+                    <div class="plant">🪴</div>
+                    <div class="counter">
+                        <div class="counter-label">QUẦY PHA CHẾ</div>
+                        <div class="counter-items">🧋 ✨ 🥤 🍮</div>
+                    </div>
+                    <div class="player">👩🏻‍🍳</div>
+                </div>
+                <div class="state-box"><span>🌼</span> <strong id="state">Buổi sáng</strong></div>
+            </section>
+
+            <section class="controls">
+                <div class="prep-actions">
+                    <button id="buyBtn" class="action action-buy">🛒<small>Nhập kho</small></button>
+                    <button id="buyMoreBtn" class="action action-store">🧺<small>Mua thêm</small></button>
+                    <button id="cleanBtn" class="action action-clean">🧹<small>Dọn quán</small></button>
+                    <button id="openBtn" class="action action-open">🔓<small>Mở cửa</small></button>
+                </div>
+
+                <div class="quick-info">
+                    <span>👥 <strong id="customerCount">0 / 12</strong></span>
+                    <span>😔 <strong id="leftCount">0</strong> rời đi</span>
+                </div>
+
+                <button id="inventoryToggle" class="utility-btn" type="button" aria-expanded="false">🎒 Xem kho nguyên liệu <span>⌄</span></button>
+                <div class="inventory-panel collapsed" id="inventoryPanel">
+                    <div class="inventory-title">📦 Kho nguyên liệu</div>
+                    <div class="inventory-note">Mỗi ly sẽ tự trừ nguyên liệu theo công thức.</div>
+                    <div id="inventory" class="inventory-grid"></div>
+                </div>
+
+                <div id="orderPanel" class="order-panel hidden">
+                    <div class="customer-header">
+                        <div>
+                            <div class="eyebrow">💌 ĐƠN CỦA KHÁCH</div>
+                            <div class="customer-request">
+                                <strong id="requestedDrink">---</strong>
+                                <span id="requestedToppingText">Không topping</span>
+                            </div>
+                        </div>
+                        <div class="customer-mini">🙂</div>
+                    </div>
+
+                    <div class="patience-box">
+                        <div class="patience-head"><span>💗 Kiên nhẫn</span><strong id="patienceText">100%</strong></div>
+                        <div class="patience-track"><div id="patienceBar"></div></div>
+                        <div class="mood-line">Tâm trạng: <strong id="mood">😊 Rất vui</strong></div>
+                    </div>
+
+                    <div class="selection-section">
+                        <div class="section-title"><span>①</span> Chọn món</div>
+                        <div id="drinkMenu" class="menu-grid"></div>
+                    </div>
+
+                    <div class="selection-section">
+                        <div class="section-title"><span>②</span> Topping</div>
+                        <div id="toppingMenu" class="topping-grid"></div>
+                    </div>
+
+                    <div class="selected-order">
+                        <div><span>🧋 Đang làm:</span> <strong id="selectedDrink">Chưa chọn</strong></div>
+                        <span id="selectedTopping">+ Không topping</span>
+                    </div>
+
+                    <div id="prepPanel" class="prep-panel">
+                        <div class="prep-head">
+                            <span>👩🏻‍🍳 Pha chế</span>
+                            <strong id="prepStepText">0 / 4</strong>
+                        </div>
+                        <div class="prep-track"><div id="prepBar"></div></div>
+                        <div id="prepHint" class="prep-hint">Chọn đúng món và topping để bắt đầu.</div>
+                        <button id="makeBtn" class="make-btn" disabled>🧋 Bắt đầu pha</button>
+                    </div>
+                    <button id="serveBtn" class="serve-btn" disabled>🍽️ Giao khách</button>
+                </div>
+
+                <div class="log-box">
+                    <button id="logToggle" class="utility-btn" type="button" aria-expanded="false">📖 Nhật ký <span>⌄</span></button>
+                    <div id="log" class="log-collapsed"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
